@@ -1,0 +1,8 @@
+<!doctype html5>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+    <head th:insert="~{public/common :: head('Inicio')}"></head>
+    <body>
+        <div th:replace="~{public/navbar :: navbar}"></div>
+        <h3 th:replace="~{public/navbar :: error_msg}"> </h3>
+    </body>
+</html>

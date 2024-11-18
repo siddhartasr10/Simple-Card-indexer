@@ -1,0 +1,23 @@
+<!doctype html5>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <th:block th:insert="~{public/common :: head('Cursos')}"> </th:block>
+        <link rel="stylesheet" th:href="@{~/card/card.css}" type="text/css" media="screen"/>
+    </head>
+    <body>
+        <div th:replace="~{public/navbar :: navbar}"> </div>
+        <!-- la card no ira en este elemento, la lista que las ordena si -->
+        <div class="card_container">
+            <div class="card" th:each="curso : ${cursos}">
+                <section class="img_section">
+                    <img th:src="@{~/img/{id}(id=${curso.getId()})}" alt="Imagen de un curso servida desde la base de datos">
+                </section>
+
+                <section class="desc_section">
+                    <span> <p th:text="${curso.getName()}"> Título </p> </span>
+                    <h6 th:text="${curso.getDescription()}"> Descripción </h6>
+                </section>
+            </div>
+        </div>
+    </body>
+</html>

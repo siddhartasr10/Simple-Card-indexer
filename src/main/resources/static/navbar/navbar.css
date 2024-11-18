@@ -1,0 +1,66 @@
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 2vw;
+    display: flex;
+    justify-content: center;
+}
+.navbar_container {
+    display:flex;
+    justify-content:center;
+    position:absolute;
+    top: 0%;
+    width: 100vw;
+    height: 20vh;
+    background-color: rgb(252, 186, 3);
+}
+.navbar {
+    align-self:flex-start;
+    width: 75vw;
+    height: 7vh;
+    margin-top: 9.6vh;
+    background-color: white;
+    transition: box-shadow 0.7s ease-in-out;
+    display:flex;
+    justify-content:center;
+    border-radius: 1cm;
+    overflow:hidden;
+}
+nav:hover {
+    box-shadow: 5px -16px 30px 2px rgb(191, 141, 0);
+}
+
+.navbar form {
+    margin-bottom:0px;
+    display:flex;
+    justify-content:center;
+}
+.navbar button {
+    display:none;
+}
+.navbar input {
+    border: none;
+    width: 70vw;
+    height: 6vh;
+    align-self:center;
+    outline:none;
+    font-size:1rem;
+    text-align:left;
+    transition: border-bottom 0.15s ease-in;
+}
+
+.navbar input::placeholder {
+    font-weight: bolder;
+}
+
+.navbar input:hover {
+    border-bottom: 0.20rem solid cadetblue;
+}
+
+.error_msg {
+    color: red;
+    font-weight: bolder;
+    font-size: 2rem;
+
+    position:absolute;
+    top: 30vh;
+}

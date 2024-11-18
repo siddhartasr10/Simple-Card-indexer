@@ -1,0 +1,31 @@
+package com.Foro1.DemoServidor;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import java.util.List;
+import com.Foro1.DemoServidor.Repository.CursosRepository;
+import com.Foro1.DemoServidor.Repository.CursosRepository.Curso;
+
+@Controller
+public class CursosController {
+    @Autowired
+    private CursosRepository cursosRep;
+
+    public CursosController(CursosRepository cursosRep) {
+        this.cursosRep = cursosRep;
+    }
+
+    @GetMapping("/cursos/")
+    public ResponseEntity<String> getCursos(@RequestParam String search, Model model) {
+        List<Curso> cursos = cursosRep.getCoursesLikeName(search);
+        if (cursos.isEmpty()) return ResponseEntity.notFound().build();
+        model.addAttribute("Cursos", cursos);
+        return ResponseEntity.ok("cursos.html");
+    }
+
+}

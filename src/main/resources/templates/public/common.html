@@ -1,0 +1,10 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+        <th:block th:fragment="head(title)">
+            <meta charset="utf-8">
+            <meta http-equiv="x-ua-compatible" content="ie=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <title th:text="${title}"> Título por defecto </title>
+            <link rel="stylesheet" th:href="@{~/navbar/navbar.css}" type="text/css" media="screen"/>
+        </th:block>
+</html>

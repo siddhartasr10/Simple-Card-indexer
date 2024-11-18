@@ -1,0 +1,14 @@
+<!doctype html5>
+<html xmlns:th="http://thymeleaf.org" lang="es">
+    <body>
+        <div th:fragment="navbar" class="navbar_container">
+            <nav class="navbar">
+                <form th:action="@{~/cursos/}" th:method="get">
+                    <input type="search" name="search" placeholder="¿Hola, que cursos te gustan?" spellcheck="false" maxlength="192" autocomplete="false">
+                    <button type="submit"> Buscar </button>
+                </form>
+            </nav>
+        </div>
+        <h3 th:fragment="error_msg" class="error_msg" th:text="${errorMsg}"> </h3>
+    </body>
+</html>
